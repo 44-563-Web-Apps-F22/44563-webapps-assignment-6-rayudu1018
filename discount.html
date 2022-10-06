@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discount page</title>
+</head>
+<body>
+    <header>Adapa Venkata Rayudu Computes Discounts</header>
+    <h2> Getting Input</h2>
+
+
+<form>
+    <label for="amount">Enter base amount </label>
+    <input type ="number" id="amount"  value="20"> <br>
+
+    <label for="dis">Enter the discount percentage</label>
+    <input type ="number" id="dis" value="10"> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function discount(){
+    console.log("Getting form values")
+    var a = document.getElementById("amount").value
+    var d = document.getElementById("dis").value
+    var result=""
+ 
+    for(let i=1;i<=5;i++)
+        {
+            result += i*(a - (a * d)/100);
+            result += " ";
+        }
+     document.getElementById("result").innerHTML="Discounted amounts for base "+a+" are "+result
+ 
+}
+</script>
+
+<form>
+    <input type="radio" id="*" value="times" name="math" onclick="chooseOp()" >
+    <label for="*">*</label></br>
+  
+    <input type="radio" id="/" value="divide" name="math" onclick="chooseOp()">
+    <label for="/">/</label></br>
+  
+    <input type="radio" id="**"  value="exponent" name="math" onclick="chooseOp()">
+    <label for="**">**</label></br>
+</form>    
+    <p id="results2"> perform operation</p>
+
+    <script>
+    function chooseOp(){
+
+    
+     var a = document.getElementById("amount").value
+     var d = document.getElementById("dis").value
+     exponent=document.getElementById("**").checked 
+     times=document.getElementById("*").checked
+     divide=document.getElementById("/").checked
+ 
+if(exponent){
+document.getElementById('results2').innerHTML="<b>(Amount ** discount) Value is: </b>"+a**d
+}
+else if(times){
+document.getElementById('results2').innerHTML="<b>(Amount * discount) Value is: </b>"+a*d
+
+}else if(divide){
+document.getElementById('results2').innerHTML="<b>(Amount / discount) value is: </b>"+a/d
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>
+        vacation
+    </title>
+ </head>
+<body>
+
+<h2> Rayudu Selects a vacation</h2>
+
+    <form>
+        <label for="travel">Travel by air </label>
+        <input type ="checkbox" id="air"  value="True"> <br>
+    
+        <label for="Dom">Domestic</label>
+        <input type ="checkbox" id="domestic" value="True"> <br>
+    
+        <label for="resort">Resort</label>
+        <input type ="checkbox" id="resort" value="False"> <br>
+
+        <input type="button" onclick="selectVacation()" value="Select a vacation">
+    </form>
+    
+<p id="result">This text will be replaced </p>
+
+<script> 
+var my_vacation = {};
+    function selectVacation() {
+        my_vacation = {};
+        let airtravel = document.getElementById("air").checked
+        let domestictravel = document.getElementById("domestic").checked
+        let resorttravel = document.getElementById("resort").checked
+        if (airtravel) {
+            my_vacation.air = true;
+        }
+        else {
+            my_vacation.air = false;
+        }
+        if (domestictravel) {
+            my_vacation.domestic = true;
+        }
+        else {
+            my_vacation.domestic = false;
+        }
+        if (resorttravel) {
+            my_vacation.resort = true;
+        }
+        else {
+            my_vacation.resort = false;
+        }
+        document.getElementById("result").innerHTML = "<b>Air:</b>"+my_vacation.air+", <b>Domestic:</b>"+my_vacation.domestic+", <b>Resort:</b>"+my_vacation.resort
+    }
+</script>
+
+</body>
+</html>
